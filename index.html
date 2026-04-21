@@ -6,6 +6,21 @@
     <title>Academic Archive & Notes</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Force unregister any existing service workers from the old Hexo PWA plugin
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+            // Force reload if service worker caused a stale cache
+            if (sessionStorage.getItem('sw_cleared') !== 'true') {
+                sessionStorage.setItem('sw_cleared', 'true');
+                window.location.reload(true);
+            }
+        }
+    </script>
     <!-- Phosphor Icons / FontAwesome for clean iconography -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
