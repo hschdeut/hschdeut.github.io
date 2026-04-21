@@ -1,4 +1,239 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Personal Homepage</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Academicons for Google Scholar, ORCID, etc. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .nav-link { transition: color 0.3s; }
+        .nav-link:hover { color: #2563eb; }
+        .section-title { position: relative; padding-bottom: 10px; margin-bottom: 30px; }
+        .section-title::after { 
+            content: ""; position: absolute; left: 0; bottom: 0; 
+            width: 50px; height: 3px; background-color: #2563eb; 
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-90 backdrop-blur shadow-sm z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-semibold text-gray-900 nav-link">Your Name</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-gray-600 font-medium nav-link">About</a>
+                    <a href="#publications" class="text-gray-600 font-medium nav-link">Publications</a>
+                    <a href="#code" class="text-gray-600 font-medium nav-link">Code & Projects</a>
+                    <a href="#cv" class="text-gray-600 font-medium nav-link">CV</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+        
+        <!-- About Section -->
+        <section id="about" class="pt-8 pb-16 border-b border-gray-200">
+            <div class="flex flex-col md:flex-row gap-10 items-start">
+                <div class="w-full md:w-1/3 flex flex-col items-center">
+                    <img src="https://via.placeholder.com/300" alt="Profile Photo" class="rounded-full w-48 h-48 object-cover shadow-md mb-6">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-1">Your Name</h1>
+                    <p class="text-md text-gray-600 mb-4 text-center">Ph.D. Student / Researcher<br>University / Institution</p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-4 mb-4">
+                        <a href="mailto:your.email@example.com" class="text-gray-500 hover:text-blue-600 text-2xl transition-colors"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 text-2xl transition-colors"><i class="ai ai-google-scholar"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 text-2xl transition-colors"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-blue-400 text-2xl transition-colors"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-2xl font-bold text-gray-900 section-title">Biography</h2>
+                    <div class="prose max-w-none text-gray-700 leading-relaxed mb-6">
+                        <p>I am a researcher / Ph.D. student at [Institution], advised by <a href="#" class="text-blue-600 hover:underline">Prof. Advisor Name</a>. My research interests lie in the intersection of <strong>Machine Learning</strong>, <strong>Computer Vision</strong>, and <strong>Natural Language Processing</strong>.</p>
+                        <p class="mt-4">Previously, I obtained my Bachelor's degree from [University] in [Year]. I have also spent time as a research intern at [Company/Institute].</p>
+                        <p class="mt-4"><strong>News:</strong></p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
+                            <li>[Oct 2024] One paper accepted to NeurIPS 2024.</li>
+                            <li>[May 2024] Started a research internship at Tech Company.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="pt-16 pb-16 border-b border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 section-title">Selected Publications <span class="text-sm font-normal text-gray-500 ml-2">(* indicates equal contribution)</span></h2>
+            
+            <div class="space-y-10">
+                <!-- Paper 1 -->
+                <div class="flex flex-col md:flex-row gap-6 group">
+                    <div class="w-full md:w-1/4 flex-shrink-0">
+                        <img src="https://via.placeholder.com/300x150" alt="Paper Teaser" class="rounded shadow-sm border border-gray-200 w-full object-cover group-hover:shadow-md transition-shadow">
+                    </div>
+                    <div class="w-full md:w-3/4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Awesome Paper Title Exploring New Frontiers in AI</h3>
+                        <p class="text-sm text-gray-800 mb-2">
+                            <strong>Your Name*</strong>, Colleague Name*, Professor Name
+                        </p>
+                        <p class="text-sm text-blue-700 font-medium mb-3 italic">Conference on Neural Information Processing Systems (NeurIPS), 2024.</p>
+                        <div class="flex flex-wrap gap-2 text-sm">
+                            <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-full hover:bg-blue-100 hover:text-blue-700 transition-colors">
+                                <i class="fas fa-file-pdf mr-2"></i> PDF
+                            </a>
+                            <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors">
+                                <i class="fab fa-github mr-2"></i> Code
+                            </a>
+                            <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors">
+                                <i class="fas fa-book-open mr-2"></i> Reading Notes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paper 2 -->
+                <div class="flex flex-col md:flex-row gap-6 group">
+                    <div class="w-full md:w-1/4 flex-shrink-0">
+                        <img src="https://via.placeholder.com/300x150" alt="Paper Teaser" class="rounded shadow-sm border border-gray-200 w-full object-cover group-hover:shadow-md transition-shadow">
+                    </div>
+                    <div class="w-full md:w-3/4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Another Groundbreaking Paper on Generative Models</h3>
+                        <p class="text-sm text-gray-800 mb-2">
+                            Colleague Name, <strong>Your Name</strong>, Professor Name
+                        </p>
+                        <p class="text-sm text-blue-700 font-medium mb-3 italic">International Conference on Learning Representations (ICLR), 2024.</p>
+                        <div class="flex flex-wrap gap-2 text-sm">
+                            <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-full hover:bg-blue-100 hover:text-blue-700 transition-colors">
+                                <i class="fas fa-file-pdf mr-2"></i> PDF
+                            </a>
+                            <a href="#" class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors">
+                                <i class="fas fa-desktop mr-2"></i> Project Page
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8">
+                <a href="/publications/" class="text-blue-600 font-medium hover:underline flex items-center">
+                    View all publications & reading notes <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Code & Projects Section -->
+        <section id="code" class="pt-16 pb-16 border-b border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 section-title">Code & Open Source</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <a href="https://github.com/yourusername/repo-name" target="_blank" class="block p-6 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                            <i class="fab fa-github mr-2"></i> Neural-Net-Framework
+                        </h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4 h-10">A lightweight PyTorch-based framework for training large scale generative models efficiently.</p>
+                    <div class="flex items-center gap-4 text-xs text-gray-500">
+                        <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-blue-500 mr-1.5"></span>Python</span>
+                        <span class="flex items-center"><i class="fas fa-star mr-1"></i> 1.2k</span>
+                        <span class="flex items-center"><i class="fas fa-code-branch mr-1"></i> 340</span>
+                    </div>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="https://github.com/yourusername/awesome-repo" target="_blank" class="block p-6 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                            <i class="fab fa-github mr-2"></i> Paper-Reading-Notes
+                        </h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4 h-10">A comprehensively maintained collection of notes on classic and newest ML/CV papers.</p>
+                    <div class="flex items-center gap-4 text-xs text-gray-500">
+                        <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-yellow-400 mr-1.5"></span>Jupyter Notebook</span>
+                        <span class="flex items-center"><i class="fas fa-star mr-1"></i> 85</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Experience / CV Section -->
+        <section id="cv" class="pt-16 pb-16">
+            <h2 class="text-2xl font-bold text-gray-900 section-title">Education & Experience</h2>
+            
+            <div class="space-y-6">
+                <!-- Item 1 -->
+                <div class="flex flex-col sm:flex-row justify-between mb-4">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">University Name</h3>
+                        <p class="text-gray-700 italic text-sm">Ph.D. in Computer Science</p>
+                    </div>
+                    <div class="text-gray-500 text-sm mt-1 sm:mt-0 font-medium">
+                        Sept 2022 – Present
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="flex flex-col sm:flex-row justify-between mb-4">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">Tech Giants Co.</h3>
+                        <p class="text-gray-700 italic text-sm">Research Intern, AI Lab</p>
+                    </div>
+                    <div class="text-gray-500 text-sm mt-1 sm:mt-0 font-medium">
+                        May 2024 – Aug 2024
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="flex flex-col sm:flex-row justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">Previous University</h3>
+                        <p class="text-gray-700 italic text-sm">B.S. in Computer Science / Mathematics</p>
+                    </div>
+                    <div class="text-gray-500 text-sm mt-1 sm:mt-0 font-medium">
+                        Sept 2018 – June 2022
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center pt-8">
+                <a href="/assets/CVSample.pdf" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                    <i class="fas fa-download mr-2"></i> Download Full Resume / CV
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12 py-8">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm mb-2">&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+            <p class="text-gray-400 text-xs text-center border-t py-2 border-gray-200 inline-block">
+                This academic site template is styled with <a href="https://tailwindcss.com/" class="hover:underline text-blue-500">Tailwind CSS</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html><!DOCTYPE HTML>
 <html lang="en">
 
 

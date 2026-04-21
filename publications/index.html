@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications & Reading Notes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased pt-24 pb-12">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white bg-opacity-90 backdrop-blur shadow-sm z-50 h-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between items-center h-full">
+                <a href="../" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                </a>
+                <span class="text-lg font-semibold text-gray-900">Publications & Notes</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <h1 class="text-3xl font-bold text-gray-900 mb-8 pb-4 border-b">Full Publication List</h1>
+        
+        <div class="space-y-8 mb-16">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold mb-2">Awesome Paper Title Exploring New Frontiers in AI</h3>
+                <p class="text-gray-700 mb-2">Your Name, Co-authors</p>
+                <p class="text-blue-600 font-medium mb-4 italic">NeurIPS 2024</p>
+                <div class="text-sm text-gray-600 mb-4 bg-gray-50 p-4 rounded border border-gray-100">
+                    <span class="font-semibold text-gray-800">Abstract:</span> We propose a novel method for... 
+                </div>
+                <div class="flex gap-3">
+                    <a href="#" class="text-blue-600 hover:underline"><i class="fas fa-file-pdf"></i> arXiv</a>
+                    <a href="#" class="text-blue-600 hover:underline"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-3xl font-bold text-gray-900 mb-8 pb-4 border-b">Paper Reading Notes</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <a href="#" class="block bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <h3 class="text-lg font-bold mb-2">Note: Attention Is All You Need</h3>
+                <p class="text-sm text-gray-500 mb-4"><i class="far fa-calendar-alt"></i> Oct 15, 2024 &bull; <i class="fas fa-tag"></i> Transformer, NLP</p>
+                <p class="text-gray-700 text-sm">Detailed personal notes and code implementation analysis of the standard Transformer model.</p>
+            </a>
+            
+            <a href="#" class="block bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <h3 class="text-lg font-bold mb-2">Note: Diffusion Models Beat GANs</h3>
+                <p class="text-sm text-gray-500 mb-4"><i class="far fa-calendar-alt"></i> Sept 22, 2024 &bull; <i class="fas fa-tag"></i> Generative Models, CV</p>
+                <p class="text-gray-700 text-sm">Understanding the mathematics and implementations behind Denoising Diffusion Probabilistic Models (DDPM).</p>
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
