@@ -1,4 +1,179 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Archive | CS & Physics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+        
+        body {
+            /* 严格删除所有动漫图片和渐变，使用极简干净的背景色 */
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #fafbfc;
+            color: #334155;
+        }
+        
+        /* ACG 风格是一种设计语言：这里采用扁平漫画风（无渐变、硬边界、冷暖对比色色块） */
+        .flat-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            /* 典型的日系扁平 UI 硬阴影 */
+            box-shadow: 4px 4px 0px #e2e8f0; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .flat-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #cbd5e1;
+            border-color: #cbd5e1;
+        }
+
+        /* 标签色彩采用莫兰迪色系（低饱和度对比色） */
+        .tag-cs { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+        .tag-physics { background: #f3e8ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+        
+        /* 自定义粗下划线样式（二次元 UI 常用高亮标记） */
+        .header-line {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        .header-line::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            width: 100%;
+            height: 10px;
+            background-color: #dbeafe;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- 极简导航条 -->
+    <nav class="w-full bg-white border-b-2 border-slate-200 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
+            <div class="font-bold text-slate-800 text-lg tracking-wider font-mono">
+                <i class="fas fa-cube text-sky-500 mr-2"></i>Research_Archive//
+            </div>
+            <div class="flex gap-6 text-sm font-bold text-slate-600">
+                <a href="#papers" class="hover:text-sky-500 transition-colors">文献笔记</a>
+                <a href="#notes" class="hover:text-sky-500 transition-colors">基础推导</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主体内容区 -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 w-full pt-10 pb-20">
+        
+        <!-- 无个人信息的站点公告 -->
+        <section class="mb-12">
+            <div class="flat-card p-8">
+                <h1 class="text-2xl font-bold text-slate-800 mb-4 header-line">
+                    ARCHIVE.LOG / 站点说明
+                </h1>
+                <p class="text-slate-600 leading-loose text-sm">
+                    这是一个完全匿名的学术与学习记录节点（脱离了现实身份的虚拟存档）。主要用于系统性归档研究生阶段在 <strong>Deep Learning (深度学习)</strong>、<strong>Computer Vision (计算机视觉)</strong>，以及部分 <strong>Physics (物理演化)</strong> 交叉领域的日常探讨。
+                    <br><br>
+                    本站剥离了所有与个人现实身份相关的信息（无头像、无简历、无社交帐号），页面 UI 借鉴了偏二次元视觉概念中的“无立绘”扁平机能风（扁平化卡片、硬体阴影与低饱和撞色），旨在创造一个纯粹、抗干扰的个人知识储备空间。
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 font-mono text-xs font-bold text-slate-400">
+                    <span class="px-2 py-1 bg-slate-100 rounded border border-slate-200">#No_Avatar</span>
+                    <span class="px-2 py-1 bg-slate-100 rounded border border-slate-200">#Study_Only</span>
+                    <span class="px-2 py-1 bg-slate-100 rounded border border-slate-200">#Anonymous_Research</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 严谨的文献精读区 -->
+        <section id="papers" class="mb-14">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                <i class="fas fa-bookmark text-amber-400 mr-2"></i> 文献精读剖析 (Paper Reading)
+            </h2>
+            
+            <div class="grid grid-cols-1 gap-6">
+                <!-- 文献记录 1 -->
+                <div class="flat-card p-6">
+                    <div class="flex flex-wrap gap-2 mb-3 text-xs font-bold font-mono">
+                        <span class="px-2 py-1 rounded tag-cs">CV / GAI</span>
+                        <span class="px-2 py-1 rounded bg-slate-100 text-slate-500 border border-slate-200">ICLR 2024</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">生成式模型潜在空间连续性的流形分析机制</h3>
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed text-justify line-clamp-3">
+                        这份笔记核心剖析了最前沿的 Diffusion Models（扩散模型）在高斯噪声逐步逆向映射到真实图像分布时的流形构造假设。详细手推了该论文中的前向微积分方程与反向 SDE（随机微分方程），并通过注释 PyTorch 源码解析了 Classifier-Free Guidance 操作的具体数学等价原理。
+                    </p>
+                    <div class="flex gap-4 text-sm font-bold mt-2">
+                        <a href="#" class="text-sky-600 hover:text-sky-800 transition-colors"><i class="fas fa-file-alt mr-1"></i> 查看全文解析</a>
+                        <a href="#" class="text-slate-400 hover:text-slate-700 transition-colors"><i class="fas fa-link mr-1"></i> 原始 Paper</a>
+                    </div>
+                </div>
+
+                <!-- 文献记录 2 -->
+                <div class="flat-card p-6">
+                    <div class="flex flex-wrap gap-2 mb-3 text-xs font-bold font-mono">
+                        <span class="px-2 py-1 rounded tag-physics">Physics NN</span>
+                        <span class="px-2 py-1 rounded bg-slate-100 text-slate-500 border border-slate-200">JCP 2019</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">PINNs 求解偏微分方程的残差函数构建验证</h3>
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed text-justify line-clamp-3">
+                        探讨深度学习预测体系与传统数值偏微分流体力学如何交叉的一篇基石文献。整理了将 Navier-Stokes 方程中的物理条件转译为网络结构损失函数（Loss = Data + Physics）的构建过程。其中包含了低雷诺数条件下的求解与误差消融分析。
+                    </p>
+                    <div class="flex gap-4 text-sm font-bold mt-2">
+                        <a href="#" class="text-sky-600 hover:text-sky-800 transition-colors"><i class="fas fa-file-alt mr-1"></i> 查看全文解析</a>
+                        <a href="#" class="text-slate-400 hover:text-slate-700 transition-colors"><i class="fas fa-code mr-1"></i> 对应复现代码</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 基础推导记录 (轻量化内容) -->
+        <section id="notes" class="mb-4">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                <i class="fas fa-microscope text-emerald-400 mr-2"></i> 基础知识推导 (Study Notes)
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 笔记 1 -->
+                <div class="flat-card p-5 border-l-4 border-l-emerald-400 border-r-0 border-t-0 border-b-0 hover:border-l-emerald-500">
+                    <h4 class="font-bold text-slate-800 mb-2">Transformer 维度张量变换总结</h4>
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                        记录了在注意力多头机制计算中，`[batch, seq_len, hidden_dim]` 在前向传播各个维度的精确切块与内积维度对齐算式。
+                    </p>
+                    <span class="text-xs font-mono font-bold text-slate-400 block text-right mt-2">— UPDATED: 24-03-20</span>
+                </div>
+
+                <!-- 笔记 2 -->
+                <div class="flat-card p-5 border-l-4 border-l-purple-400 border-r-0 border-t-0 border-b-0 hover:border-l-purple-500">
+                    <h4 class="font-bold text-slate-800 mb-2">统计物理：配分函数解析小结</h4>
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                        从微正则系综推导至正则系综的统计概率极限近似推演；主要明确了对于理想自由粒子与振子热力势关联式的推演前提。
+                    </p>
+                    <span class="text-xs font-mono font-bold text-slate-400 block text-right mt-2">— UPDATED: 24-03-12</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 底部版权 -->
+    <footer class="w-full bg-white border-t-2 border-slate-200 py-6 mt-auto">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="font-mono text-slate-400 text-xs font-bold">
+                [Research Archive Log] &copy; <script>document.write(new Date().getFullYear())</script> 
+            </div>
+            <div class="font-mono text-slate-400 text-xs mt-2 md:mt-0 font-bold">
+                SYSTEM <span class="text-sky-500">ONLINE</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html><!DOCTYPE html>
 <html lang="zh-CN" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
