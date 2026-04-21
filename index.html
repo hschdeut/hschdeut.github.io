@@ -3,6 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic & Study Space</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; 
+            background-color: #f8fafc; /* Tailwind slate-50 */
+        }
+        
+        /* 柔和的卡片阴影与悬停效果，保留一丝现代/轻快感 */
+        .academic-card {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s ease-in-out;
+        }
+        .academic-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            border-color: #e2e8f0;
+        }
+
+        .nav-link { transition: color 0.2s; }
+        .nav-link:hover { color: #6366f1; /* Indigo 500 */ }
+        
+        /* 强调下划线 */
+        .highlight-title { position: relative; display: inline-block; padding-bottom: 4px; }
+        .highlight-title::after { 
+            content: ""; position: absolute; left: 0; bottom: 0; 
+            width: 40%; height: 3px; background-color: #818cf8; border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="text-slate-700 antialiased min-h-screen flex flex-col">
+
+    <!-- 顶部导航栏 -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50 transition-all">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-book-reader text-indigo-500 text-xl"></i>
+                <a href="#" class="text-lg font-bold text-slate-800 tracking-wide nav-link">Study Space</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#about" class="text-slate-600 nav-link">关于我 (About)</a>
+                <a href="#papers" class="text-slate-600 nav-link">文献笔记 (Paper Notes)</a>
+                <a href="#projects" class="text-slate-600 nav-link">项目 & 代码 (Projects)</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主体区域 -->
+    <main class="flex-grow pt-28 pb-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        
+        <!-- 个人简介 (结合学术严肃性与个人风格) -->
+        <section id="about" class="mb-16">
+            <div class="academic-card p-8 md:p-10 flex flex-col md:flex-row items-center gap-10">
+                <!-- 头像区域 (保留稍微生动的头像，而不是枯燥的证件照) -->
+                <div class="flex-shrink-0">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=e2e8f0" class="w-40 h-40 rounded-full object-cover border-4 border-white shadow-md" alt="Avatar">
+                </div>
+                
+                <!-- 简介文字 -->
+                <div>
+                    <h1 class="text-3xl font-bold text-slate-800 mb-2">Hello, I'm [Your Name] 👋</h1>
+                    <p class="text-indigo-600 font-medium mb-4 flex items-center text-sm">
+                        <i class="fas fa-university mr-2"></i> 计算机 / 物理系 研究生 (Graduate Student)
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-sm mb-6 max-w-2xl">
+                        欢迎来到我的自留地。这里主要用于归档我的<strong>文献阅读笔记 (Paper Reading)</strong>、算法实现与日常的研究心得。<br>
+                        研究兴趣主要集中在 <strong>Deep Learning</strong>、<strong>Computer Vision</strong> 以及部分 <strong>Physics</strong> 相关的交叉领域。相比于只存放在本地，我更喜欢把思考的过程开源分享出来。
+                    </p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/hschdeut" target="_blank" class="text-slate-500 hover:text-slate-800 text-xl transition-colors"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-slate-500 hover:text-blue-500 text-xl transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:email@example.com" class="text-slate-500 hover:text-indigo-500 text-xl transition-colors"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="text-slate-500 hover:text-emerald-600 text-xl transition-colors"><i class="fas fa-file-pdf"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文献阅读 / 学术笔记 -->
+        <section id="papers" class="mb-16">
+            <h2 class="text-2xl font-bold text-slate-800 mb-8 highlight-title">
+                文献阅读与笔记 (Paper Reading)
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- 笔记 1 -->
+                <article class="academic-card p-6 flex flex-col md:flex-row gap-6">
+                    <div class="w-full md:w-3/4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded text-xs font-semibold">计算机视觉 (CV)</span>
+                            <span class="text-xs text-slate-400"><i class="far fa-calendar-alt mr-1"></i> 2024-03-15</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">
+                            <a href="#" class="hover:text-indigo-600 transition-colors">Attention Is All You Need (Transformer) 核心机制推导</a>
+                        </h3>
+                        <p class="text-sm text-slate-500 mb-3 italic">Authors: Ashish Vaswani, Noam Shazeer, et al. (NeurIPS 2017)</p>
+                        <p class="text-sm text-slate-600 mb-4 line-clamp-2">
+                            详细梳理了 Transformer 架构中的 Self-Attention 机制与 Multi-head 机制的数据维度变换过程。包括为什么需要缩放点积（Scaled Dot-Product）以及其中涉及到梯度的数学推导，并附上了 PyTorch 的手动实现代码。
+                        </p>
+                        <div class="flex gap-3 text-sm">
+                            <a href="#" class="text-indigo-600 hover:underline font-medium"><i class="fas fa-book-open mr-1"></i> 阅读全文</a>
+                            <a href="#" class="text-slate-500 hover:text-slate-800 transition-colors"><i class="fas fa-file-pdf mr-1"></i> Paper Link</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 笔记 2 -->
+                <article class="academic-card p-6 flex flex-col md:flex-row gap-6">
+                    <div class="w-full md:w-3/4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded text-xs font-semibold">物理 / 交叉学科</span>
+                            <span class="text-xs text-slate-400"><i class="far fa-calendar-alt mr-1"></i> 2024-02-28</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">
+                            <a href="#" class="hover:text-indigo-600 transition-colors">基于 PINNs (物理信息神经网络) 求解偏微分方程的综述</a>
+                        </h3>
+                        <p class="text-sm text-slate-500 mb-3 italic">Authors: M. Raissi, P. Perdikaris, G.E. Karniadakis (JCP 2019)</p>
+                        <p class="text-sm text-slate-600 mb-4 line-clamp-2">
+                            PINNs 通过将物理方程的残差作为损失函数的一部分，使得深度学习模型能够满足物理法则。这篇笔记总结了最基础的连续时间与离散时间的求解方案，以及其在高维薛定谔方程上的测试表现。
+                        </p>
+                        <div class="flex gap-3 text-sm">
+                            <a href="#" class="text-indigo-600 hover:underline font-medium"><i class="fas fa-book-open mr-1"></i> 阅读全文</a>
+                            <a href="#" class="text-slate-500 hover:text-slate-800 transition-colors"><i class="fas fa-code mr-1"></i> 复现代码</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="mt-6 text-center md:text-left">
+                <a href="#" class="inline-flex items-center text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors">
+                    查看所有文献笔记 <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 项目与代码 -->
+        <section id="projects" class="mb-16">
+            <h2 class="text-2xl font-bold text-slate-800 mb-8 highlight-title">
+                开源代码与个人项目 (Projects)
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Code Card 1 -->
+                <a href="https://github.com/hschdeut" target="_blank" class="academic-card p-6 block group">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">
+                            <i class="fab fa-github mr-2"></i> ML-Paper-Implementations
+                        </h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 h-10">个人文献阅读过程中手动使用 PyTorch 复现的经典机器学习/深度学习模型代码集合。</p>
+                    <div class="flex items-center gap-4 text-xs text-slate-500 font-medium">
+                        <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 mr-1.5"></span>Python</span>
+                        <span><i class="fas fa-star mr-1"></i> 12</span>
+                    </div>
+                </a>
+
+                <!-- Code Card 2 -->
+                <a href="#" target="_blank" class="academic-card p-6 block group">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">
+                            <i class="fas fa-chart-network mr-2 text-slate-700"></i> Physics-Simulation-Tools
+                        </h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 h-10">基于 MATLAB / Python 的一些简单物理过程（如多体运动、波函数演化）的数值模拟脚本。</p>
+                    <div class="flex items-center gap-4 text-xs text-slate-500 font-medium">
+                        <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-yellow-500 mr-1.5"></span>Jupyter</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-white border-t border-slate-200 mt-auto py-8">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm font-medium">
+                &copy; <script>document.write(new Date().getFullYear())</script> Your Name's Study Space.
+            </p>
+            <p class="text-slate-400 text-xs mt-2">
+                Designed with <i class="fas fa-coffee text-amber-600 mx-1"></i> and Tailwind CSS.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌟 某研究生的秘密基地 🌟</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
