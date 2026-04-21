@@ -1,4 +1,210 @@
 <!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 某研究生的秘密基地 🌟</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 樱花飘落特效 -->
+    <script src="https://cdn.jsdelivr.net/gh/yuzhitong/yuzhitong.github.io/js/sakura.js"></script>
+    
+    <style>
+        body {
+            /* 随机二次元动漫风景背景 */
+            background-image: url('https://api.paugram.com/wallpaper?source=sina'); 
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            color: #4a4a4a;
+        }
+        
+        /* 玻璃拟态卡片效果 (Frosted Glass) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        .pink-hover { transition: all 0.3s ease; }
+        .pink-hover:hover { color: #f472b6; transform: translateY(-2px); }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(244, 114, 182, 0.2);
+            border-color: rgba(244, 114, 182, 0.4);
+        }
+        
+        /* 自定义粉色滚动条 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.5); }
+        ::-webkit-scrollbar-thumb { background: #fbcfe8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f472b6; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-16 flex flex-col items-center">
+
+    <!-- 导航栏 (透明毛玻璃) -->
+    <nav class="fixed top-0 w-full glass-panel !rounded-none !border-t-0 z-50 h-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-moon text-pink-400 text-xl animate-pulse"></i>
+                <a href="#" class="text-xl font-bold text-gray-800 tracking-wide pink-hover">Yuki's Lab</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-700 font-medium pink-hover"><i class="fas fa-home mr-1"></i> 首页</a>
+                <a href="#cs" class="text-gray-700 font-medium pink-hover"><i class="fas fa-laptop-code mr-1"></i> 计算机笔记</a>
+                <a href="#physics" class="text-gray-700 font-medium pink-hover"><i class="fas fa-atom mr-1"></i> 物理随笔</a>
+                <a href="#daily" class="text-gray-700 font-medium pink-hover"><i class="fas fa-coffee mr-1"></i> 碎碎念</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 顶部个人名片区 -->
+    <header class="w-full max-w-4xl mt-28 px-4" id="home">
+        <div class="glass-panel p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+            <!-- 装饰性光晕 -->
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob"></div>
+            <div class="absolute top-10 -left-10 w-32 h-32 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob animation-delay-2000"></div>
+
+            <!-- 头像 (可以通过替换 src 换成自己的二次元头像) -->
+            <div class="relative group">
+                <img src="https://api.paugram.com/wallpaper?source=sina" class="w-40 h-40 rounded-full object-cover border-4 border-white shadow-lg transition-transform duration-500 group-hover:rotate-[360deg]" alt="Anime Avatar">
+            </div>
+            
+            <div class="text-center md:text-left z-10 w-full">
+                <h1 class="text-3xl font-extrabold text-gray-800 mb-2">某研究生的学习手帐 🌸</h1>
+                <p class="text-pink-500 font-medium mb-4 text-sm flex items-center justify-center md:justify-start">
+                    <i class="fas fa-graduation-cap mr-2"></i> CS & Physics 研究生在读
+                </p>
+                <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                    这里是保存研究生日常的地方。白天写 Bug，晚上推公式；研究机器学习，也热爱量子力学。<br>希望能把枯燥的学术生活记录得生动一点呀～ ✨
+                </p>
+                <div class="flex space-x-4 justify-center md:justify-start">
+                    <a href="https://github.com/hschdeut" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 text-white flex items-center justify-center hover:-translate-y-1 hover:shadow-lg transition-all"><i class="fab fa-github"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-400 text-white flex items-center justify-center hover:-translate-y-1 hover:shadow-lg transition-all"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-pink-400 text-white flex items-center justify-center hover:-translate-y-1 hover:shadow-lg transition-all"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体内容卡片流 -->
+    <main class="w-full max-w-4xl px-4 mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- CS 专区 -->
+        <section id="cs" class="md:col-span-2">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 drop-shadow-sm flex items-center">
+                <i class="fas fa-code text-blue-500 mr-2"></i> 计算机笔记 (Computer Science)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- CS 文章卡片 -->
+                <article class="glass-panel p-6 card-hover transition-all duration-300">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-bold">Deep Learning</span>
+                        <span class="text-xs text-gray-400"><i class="far fa-clock"></i> 近期阅读</span>
+                    </div>
+                    <a href="/publications/" class="block">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-500">大模型炼丹玄学：如何调参不炸损失？</h3>
+                        <p class="text-gray-600 text-sm line-clamp-3">今天复现了一下最新的注意力机制论文，跑了 4 张 4090 还是 OOM... 赶紧把踩坑记录下来，顺便整理了一波代码逻辑。</p>
+                    </a>
+                </article>
+
+                <article class="glass-panel p-6 card-hover transition-all duration-300">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-bold">Algorithm</span>
+                        <span class="text-xs text-gray-400"><i class="far fa-clock"></i> 补基础</span>
+                    </div>
+                    <a href="#" class="block">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">手撕红黑树的一天（附 C++ 代码）</h3>
+                        <p class="text-gray-600 text-sm line-clamp-3">算法题真是让人头秃，把旋转逻辑和调整用可视化的方式重新推导了一遍，懂了之后感觉自己很强！(并没有)</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Physics 专区 -->
+        <section id="physics">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 drop-shadow-sm flex items-center">
+                <i class="fas fa-meteor text-purple-500 mr-2"></i> 物理碎碎念
+            </h2>
+            <div class="space-y-6">
+                 <!-- 物理卡片 -->
+                <article class="glass-panel p-6 card-hover transition-all duration-300 group">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-bold mb-3 inline-block">Quantum Mechanics</span>
+                    <a href="#" class="block">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-500">薛定谔的猫与我今天的心情</h3>
+                        <p class="text-gray-600 text-sm">每次复习态叠加原理，都觉得世界充满了随机性。正如导师问我实验结果，没跑完之前永远处于“行与不行”的叠加态...</p>
+                    </a>
+                </article>
+
+                <article class="glass-panel p-6 card-hover transition-all duration-300 group">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-bold mb-3 inline-block">Statistical Physics</span>
+                    <a href="#" class="block">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-500">配分函数推导笔记：从微正则到正则相系</h3>
+                        <p class="text-gray-600 text-sm">硬刚了三个晚上的公式，最终算出了热容的解析解。虽然很累但数学真的很美。这属于是把头发献给真理的节奏了（悲）。</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- 日常杂录专区 -->
+        <section id="daily">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 drop-shadow-sm flex items-center">
+                <i class="fas fa-cat text-pink-400 mr-2"></i> 日常杂录
+            </h2>
+            <div class="glass-panel p-6 h-full flex flex-col justify-start">
+                
+                <div class="relative pl-6 border-l border-pink-200 space-y-8">
+                    <!-- 动态记录 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-8 bg-pink-400 w-4 h-4 rounded-full border-2 border-white"></div>
+                        <h4 class="text-sm font-bold text-pink-500 mb-1">刚刚</h4>
+                        <p class="text-gray-700 text-sm">今天又是赶 DDL 的一天，一边喝冰美式一边改代码，突然听到一首超级好听的动漫 OP！续命成功！🎵</p>
+                    </div>
+
+                    <!-- 动态记录 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-8 bg-pink-300 w-4 h-4 rounded-full border-2 border-white"></div>
+                        <h4 class="text-sm font-bold text-gray-400 mb-1">两天前</h4>
+                        <p class="text-gray-700 text-sm">去参加组会。听大佬汇报，满图都是看不懂的矩阵推导。我的脑子：(°_°)</p>
+                    </div>
+
+                    <!-- 动态记录 3 -->
+                    <div class="relative">
+                        <div class="absolute -left-8 bg-pink-200 w-4 h-4 rounded-full border-2 border-white"></div>
+                        <h4 class="text-sm font-bold text-gray-400 mb-1">上周末</h4>
+                        <p class="text-gray-700 text-sm">好不容易休息，肝完了最近新出的某治愈系新番，哭得稀里哗啦的。推荐给大家《葬送的芙莉莲》！</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-4xl mt-12 text-center">
+        <div class="glass-panel py-6 px-4">
+            <p class="text-sm text-gray-600 mb-1">
+                Made with <i class="fas fa-heart text-pink-400 animate-pulse"></i> by <span class="font-bold">Your Name</span>
+            </p>
+            <p class="text-xs text-gray-400">© 2026 研究生的浪漫日记. CSS with Tailwind.</p>
+        </div>
+    </footer>
+
+    <!-- 看板娘插件 (Live2D widget) -->
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+</body>
+</html><!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
